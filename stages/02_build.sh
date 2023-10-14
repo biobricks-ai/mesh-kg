@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Script to process unzipped files and build parquet files
+# Script to convert RDF .nt.gz to RDF HDT
 
 # Get local path
 localpath=$(pwd)
@@ -17,4 +17,4 @@ echo "Brick path: $brickpath"
 
 cp -p $downloadpath/*.ttl $brickpath/
 base_uri="https://nlmpubs.nlm.nih.gov/projects/mesh/rdf/mesh.nt.gz"
-rdf2hdt -i -p -B "$base_uri" download/mesh.nt.gz brick/mesh.hdt
+rdf2hdt -i -p -B "$base_uri" $downloadpath/mesh.nt.gz $brickpath/mesh.hdt
